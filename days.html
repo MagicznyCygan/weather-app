@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/style.css">
+    <title>magicweather</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Current</a></li>
+                    <li><a class="active" href="days.html">3-Days</a></li>
+                </ul>
+            </nav>
+            <div class="logo-container">
+                <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="45.406" height="47.016" viewBox="0 0 45.406 47.016">
+                    <path id="Icon_metro-weather4" data-name="Icon metro-weather4" d="M38.044,7.805a9.509,9.509,0,0,0-1.4.1,13.8,13.8,0,0,0-22.74,0,9.509,9.509,0,0,0-1.4-.1A10.126,10.126,0,0,0,2.571,18.09,10.126,10.126,0,0,0,12.5,28.375a9.531,9.531,0,0,0,3.522-.673,13.647,13.647,0,0,0,18.5,0,9.531,9.531,0,0,0,3.522.673A10.126,10.126,0,0,0,47.976,18.09,10.126,10.126,0,0,0,38.044,7.805Zm0,17.631a6.774,6.774,0,0,1-2.505-.478l-1.6-.635-1.286,1.163a10.879,10.879,0,0,1-14.766,0L16.6,24.323l-1.6.635a6.76,6.76,0,0,1-2.505.478A7.232,7.232,0,0,1,5.409,18.09,7.232,7.232,0,0,1,12.5,10.744a6.96,6.96,0,0,1,1,.073l1.681.253,1.007-1.419a11.018,11.018,0,0,1,18.167,0l1.009,1.421,1.685-.253a6.872,6.872,0,0,1,.994-.073,7.232,7.232,0,0,1,7.095,7.346,7.232,7.232,0,0,1-7.095,7.346Zm-26.96,5.877a2.94,2.94,0,1,0,2.838,2.939A2.888,2.888,0,0,0,11.084,31.313Zm14.189,2.939a2.94,2.94,0,1,0,2.838,2.939A2.888,2.888,0,0,0,25.274,34.252Zm14.189-2.939A2.94,2.94,0,1,0,42.3,34.252,2.888,2.888,0,0,0,39.463,31.313ZM33.787,43.067a2.94,2.94,0,1,0,2.838,2.939,2.888,2.888,0,0,0-2.838-2.939Zm-17.027,0A2.94,2.94,0,1,0,19.6,46.006a2.888,2.888,0,0,0-2.838-2.939Z" transform="translate(-2.571 -1.928)"/></svg>
+                </div>
+                <div class="logo-text">magic<span>weather</span></div>
+            </div>
+
+            <div class="input-box">
+                <input id="city-input" type="text" placeholder="City...">
+                <button id="btn">Search</button>
+            </div>
+        </header>
+        <main>
+            <h2 id="weather-header"></h2>
+
+            <div id="weather-cards" class="weather-cards">
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/app-days.js"></script>
+</body>
+</html>

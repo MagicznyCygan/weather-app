@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    background-color: #F1F1F1;
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 25vh;
+    background-color: white;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+}
+.logo{
+    margin-right: 20px;
+}
+.logo-text{
+    font-size: 30px;
+    font-weight: bold;
+}
+.logo-text span{
+    color: #047A9C;
+    font-weight: 400;
+}
+.input-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+.input-box input{
+    width: 50%;
+    height: 30px;
+    border: none;
+    background-color: #CECECE;
+    cursor: pointer;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+.input-box button{
+    width: 30%;
+    height: 30px;
+    border: none;
+    background-color: #0081A7;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+
+main{
+    width: 100%;
+    height: auto;
+    background-color: #F1F1F1;
+}
+main h2{
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.weather-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.weather-card{
+    width: 70%;
+    background: #f12711;  
+    background: -webkit-linear-gradient(to right, rgba(245, 175, 25, 0.61), rgba(241, 39, 17, 0.61));
+    background: linear-gradient(to top, rgba(245, 175, 25, 0.65), rgba(241, 39, 17, 0.65));
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+.day-name{
+    margin-top: 30px;
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.month-name{
+    font-size: 22px;
+}
+.weather-icon{
+    margin-top: 20px;
+    width: 70px;
+}
+.about-weather{
+    margin-top: 25px;
+    font-size: 18px;
+}
+.temp-box{
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.temp-box .min-temp, .temp-box .max-temp{
+    font-size: 21px;
+}
+.temp-box .actual-temp{
+    font-size: 35px;
+}
+.temp-info-box{
+    margin-top: -6px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.temp-info-box .now{
+    font-size: 25px
+}
+.temp-info-box .low,.temp-info-box .high{
+    font-size: 18px;
+}
+.humidity{
+    margin-top: 20px;
+}
+.wind-speed{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.big{
+    font-weight: 600;
+}
+nav{
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+.active{
+    color: #047A9C;
+}
+
+
+
+@media only screen and (min-width: 700px) {
+    .weather-cards{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .weather-card{
+        width: 45%; 
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (min-width: 900px) {
+    .weather-card{
+        width: 35%; 
+    }
+  }
+
+  @media only screen and (min-width: 1250px) {
+    .weather-card{
+        width: 30%; 
+        height: 60vh;
+    }
+  }
+
+@media only screen and (min-width: 800px) {
+    .input-box input{
+        width: 50%;
+    }
+    .input-box button{
+        width: 20%;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .input-box input{
+        width: 50%;
+    }
+    .input-box button{
+        width: 20%;
+    }
+  }
