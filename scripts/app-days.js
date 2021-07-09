@@ -51,6 +51,7 @@ const getMonth = (date) => {
 
 const getDay = (dateDay) => {
     let dayS = dateDay.getDay()
+    console.log(dayS)
     let day
 
     switch(dayS){
@@ -72,13 +73,64 @@ const getDay = (dateDay) => {
         case 6:
             day = "Saturday";
             return day;
-        case 7:
+        case 0:
             day = "Sunday";
             return day;
     
         default:
             break;
     }
+}
+
+const showDays = (data, day) => {
+    //console.log(day.hour)
+    const hourBox = document.createElement('div')
+    //hourBox.classList.add('hour')
+    day.hour.forEach(hour => {
+        console.log(hour)
+        const hourBox = document.createElement('div')
+        hourBox.classList.add('hour')
+        const time = hour.time.split(/-| / ) 
+        console.log(time)
+        hourBox.innerHTML = `
+            <div class="time">${time[3]}</div>
+            <img class="icon" src="${hour.condition.icon}"/>
+            <div class="time">${hour.condition.text}</div>
+            <div class="time">${hour.temp_c.toFixed(0)}°C</div>
+        `
+        document.getElementById('hours').appendChild(hourBox)
+    });
+}
+
+const showPopup = (weatherCard, cardInfo, info) => {
+    const popup = document.getElementById('popup');
+    const cross = document.getElementById('cross');
+    const header = document.getElementById('header');
+    const main = document.getElementById('main');
+    const contentBox = document.getElementById('content');
+
+    weatherCard.addEventListener('click', () => {
+        popup.style.display = "block";
+        header.style.display = "none";
+        main.style.display = "none";
+        console.log(info.city)
+        contentBox.innerHTML = `
+            <div id="day-name" class="day-name">${info.dayName}</div>
+            <div id="month-name" class="month-name">${info.monthName} ${info.dayNr}</div>
+        `
+        let url = `https://api.weatherapi.com/v1/forecast.json?key=${config.apikey}&q=${info.city}&days=10&aqi=no&alerts=no`;
+        fetch(url)
+        .then( res => res.json() )
+        .then( data => showDays(data,info.day) )
+    })
+
+    cross.addEventListener('click', () => {
+        popup.style.display = "none";
+        header.style.display = "block";
+        main.style.display = "block";
+    });
+    
+
 }
 
 const showWeather = (data) => {
@@ -94,7 +146,6 @@ const showWeather = (data) => {
         let unixDate = forecast.forecastday[i].date_epoch;
         let dateDay = new Date(unixDate * 1000)
         let day = getDay(dateDay)
-
         let date = forecast.forecastday[i].date.split("-");
         console.log(date)
         let month = getMonth(date);
@@ -117,6 +168,14 @@ const showWeather = (data) => {
         <div id="wind-speed" class="wind-speed">Wind Speed: ${forecast.forecastday[i].day.maxwind_mph.toFixed(0)}mph</div>`;
         weatherCard.innerHTML = cardInfo;
         document.getElementById('weather-cards').appendChild(weatherCard)
+        const info = {
+            dayName: day,
+            monthName: month,
+            dayNr: date[2],
+            city: location.name,
+            day: forecast.forecastday[i],
+        }
+        showPopup(weatherCard, cardInfo, info)
     }
 }
 

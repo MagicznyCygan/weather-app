@@ -78,6 +78,7 @@ const showWeather = (data) => {
     <div id="wind-speed" class="wind-speed">Wind Speed: ${current.wind_mph.toFixed(0)}mph</div>`;
     weatherCard.innerHTML = cardInfo;
     document.getElementById('weather-cards').appendChild(weatherCard)
+    
 }
 
 const getWeather = () => {
